@@ -6,6 +6,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <property name="java-output-path" value="/hithere-center/target/classes"/>
-        <property name="context-root" value="hithere-center"/>
+        <property name="context-root" value="tools_box"/>
     </wb-module>
 </project-modules>
