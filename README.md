@@ -7,8 +7,8 @@
 3、设计模式练习。com.cyou.test.designmode。<br/>
 4、Mongodb的聚合函数的使用AggregationTest和ZipCodeDataSetTest。<br/>
 5、敏感词过滤，采用DFA算法处理。com.cyou.hithere.center.util.badword。<br/>
-6、Disruptor它是一个开源的并发框架，参考地址：http://ifeve.com/disruptor/，并发处理能力超强。
-com.cyou.hithere.center.util.disruptor<br/>
+6、Disruptor它是一个开源的并发框架，参考地址：http://ifeve.com/disruptor
+并发处理能力超强。com.cyou.hithere.center.util.disruptor<br/>
 7、guava工具包的使用，com.cyou.hithere.center.util.guava<br/>
 8、图片处理，如加水印，裁剪，缩放，格式转化等，com.cyou.test.img.ImgTest<br/>
 9、kafka，现在是简单kafka的生产者配置，后面会把项目中在用的代码搬过来展示一下。<br/>
