@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<!-- 环境变量识别 <bean id="propertyConfigure" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/> -->
+	<!-- 注解识别 -->
+	<context:annotation-config />
+	<!--切面编程声明 -->
+	<aop:aspectj-autoproxy />
+	<!-- 自动扫描该包下注解标识类 -->
+	<context:component-scan base-package="com.cyou.hithere.center" />
+
+	<bean id="propertyConfigurer" class="com.cyou.hithere.center.util.CustomProperty">
+		<property name="locations">
+			<list>
+				<value>classpath:config.properties</value>				
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="springContextUtil" class="com.cyou.hithere.center.util.SpringContextUtil" scope="singleton" />
+</beans>

@@ -1,0 +1,309 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.xxx</groupId>
+	<artifactId>tools_box</artifactId>
+	<packaging>war</packaging>
+	<version>1.0.0</version>
+	<name>tools_box</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>3.1.0.RELEASE</spring.version>
+		<morphia.version>0.110</morphia.version>
+		<mongo-java-driver.version>3.3.0</mongo-java-driver.version>
+		<sitemesh.version>2.4.2</sitemesh.version>
+	</properties>
+	<repositories>
+		<repository>
+			<id>mapfish</id>
+			<url>http://dev.mapfish.org/maven/repository</url>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<!-- spring核心包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- 利用IOC管理Bean的包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- 对bean再次封装后的包，方便性强。 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- spring扩展包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- SpringWeb下的工具包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- 日志功能 -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<!-- 日志功能 -->
+		<!-- logging begin -->
+		<!-- slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+		<!-- slf4j-log4j绑定 -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+		<!-- slf4j没有log4j的情形 -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+		<!-- logging end -->
+		<!-- 工具类 -->
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<!-- XML配置和映射管理器 -->
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>1.8</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+		<!--servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- mongodb -->
+		<dependency>
+			<groupId>org.mongodb.morphia</groupId>
+			<artifactId>morphia</artifactId>
+			<version>${morphia.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>${mongo-java-driver.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>netty-buffer</artifactId>
+					<groupId>io.netty</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>netty-handler</artifactId>
+					<groupId>io.netty</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- s3 -->
+		<dependency>
+			<groupId>net.java.dev.jets3t</groupId>
+			<artifactId>jets3t</artifactId>
+			<version>0.9.0</version>
+		</dependency>
+		<!-- s3 end -->
+		<dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>${sitemesh.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>18.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.dozer</groupId>
+			<artifactId>dozer</artifactId>
+			<version>5.5.1</version>
+		</dependency>
+		<!-- json -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.module</groupId>
+			<artifactId>jackson-module-jaxb-annotations</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+		<!-- time -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.7</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.groboutils</groupId>
+			<artifactId>groboutils-core</artifactId>
+			<version>5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-core</artifactId>
+			<version>5.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-pool</artifactId>
+			<version>5.7.0</version>
+		</dependency>
+		<!-- 图片压缩处理 -->
+		<dependency>
+			<groupId>net.coobird</groupId>
+			<artifactId>thumbnailator</artifactId>
+			<version>0.4.8</version>
+		</dependency>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>5.0.0.Alpha2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.lmax</groupId>
+			<artifactId>disruptor</artifactId>
+			<version>3.3.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka_2.11</artifactId>
+			<version>0.8.2.2</version>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>jmxri</artifactId>
+					<groupId>com.sun.jmx</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jms</artifactId>
+					<groupId>javax.jms</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jmxtools</artifactId>
+					<groupId>com.sun.jdmk</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<!-- 设定Web应用中编译结果输出到src/main/webapp/WEB-INF/classes中，与使用IDE时相同 -->
+		<outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
+		<!-- 设置war包名称 -->
+		<finalName>${artifactId}</finalName>
+		<!-- 定义resource插件打包所需要包含的目录 -->
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+	</build>
+
+</project>
