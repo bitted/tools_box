@@ -6,6 +6,10 @@
 package com.cyou.hithere.center.util;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import net.sf.json.JSONObject;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -39,11 +43,11 @@ public class JsonMapper {
 
 	public JsonMapper(Include include) {
 		mapper = new ObjectMapper();
-		//设置输出时包含属性的风格
+		// 设置输出时包含属性的风格
 		if (include != null) {
 			mapper.setSerializationInclusion(include);
 		}
-		//设置输入时忽略在JSON字符串中存在但Java对象实际没有的属性
+		// 设置输入时忽略在JSON字符串中存在但Java对象实际没有的属性
 		mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 	}
 
@@ -83,6 +87,7 @@ public class JsonMapper {
 	 * 如果JSON字符串为"[]", 返回空集合.
 	 * 
 	 * 如需反序列化复杂Collection如List<MyBean>, 请使用fromJson(String,JavaType)
+	 * 
 	 * @see #fromJson(String, JavaType)
 	 */
 	public <T> T fromJson(String jsonString, Class<T> clazz) {
@@ -100,6 +105,7 @@ public class JsonMapper {
 
 	/**
 	 * 反序列化复杂Collection如List<Bean>, 先使用函數createCollectionType构造类型,然后调用本函数.
+	 * 
 	 * @see #createCollectionType(Class, Class...)
 	 */
 	public <T> T fromJson(String jsonString, JavaType javaType) {
@@ -129,7 +135,7 @@ public class JsonMapper {
 	 */
 	public <T> T update(String jsonString, T object) {
 		try {
-			return (T)mapper.readerForUpdating(object).readValue(jsonString);
+			return (T) mapper.readerForUpdating(object).readValue(jsonString);
 		} catch (JsonProcessingException e) {
 			logger.warn("update json string:" + jsonString + " to object:" + object + " error.", e);
 		} catch (IOException e) {
@@ -162,6 +168,43 @@ public class JsonMapper {
 	public void enableJaxbAnnotation() {
 		JaxbAnnotationModule module = new JaxbAnnotationModule();
 		mapper.registerModule(module);
+	}
+
+	/**
+	 * toMap(String转成map)
+	 * 
+	 * @param json
+	 * @return
+	 *         返回类型：Map<String,Object>
+	 * @exception
+	 * @since 1.0.0
+	 */
+	@SuppressWarnings("unchecked")
+	public static Map<String, Object> toMap(String json) {
+		Map<String, Object> data = new HashMap<String, Object>();
+		// 将json字符串转换成jsonObject
+		JSONObject jsonObject = JSONObject.fromObject(json);
+		data = (Map<String, Object>) JSONObject.toBean(jsonObject, Map.class);
+		return data;
+	}
+
+	/**
+	 * 格式转换
+	 * 
+	 * @param map
+	 * @return
+	 */
+	public static String getJsonFromMap(Map<String, Object> map) {
+		if (map == null || map.size() == 0) {
+			return null;
+		}
+		String json = null;
+		try {
+			json = JSONObject.fromObject(map).toString();
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+		}
+		return json;
 	}
 
 	/**
