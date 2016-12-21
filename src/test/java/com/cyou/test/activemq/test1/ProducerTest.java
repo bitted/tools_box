@@ -39,7 +39,7 @@ public class ProducerTest {
 	}
 
 	/**
-	 * Test method for {@link com.cyou.test.activemq.test1.zhaiyz.activemq.Producer#sendMessage(java.lang.String)}.
+	 * Test method for {@link com.cyou.hithere.center.util.concurrent.abq.zhaiyz.activemq.Producer#sendMessage(java.lang.String)}.
 	 * 
 	 * @throws Throwable
 	 */
