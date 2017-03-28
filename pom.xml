@@ -14,14 +14,15 @@
 		<morphia.version>0.110</morphia.version>
 		<mongo-java-driver.version>3.3.0</mongo-java-driver.version>
 		<sitemesh.version>2.4.2</sitemesh.version>
+		<toolkit-version>3.1.2-RELEASE</toolkit-version>
 	</properties>
-	<repositories>
-		<repository>
-			<id>mapfish</id>
-			<url>http://dev.mapfish.org/maven/repository</url>
-		</repository>
-	</repositories>
+
 	<dependencies>
+		<dependency>
+			<groupId>com.dangdang</groupId>
+			<artifactId>config-toolkit</artifactId>
+			<version>${toolkit-version}</version>
+		</dependency>
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
@@ -211,11 +212,7 @@
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 		</dependency>
-		<dependency>
-			<groupId>net.sourceforge.groboutils</groupId>
-			<artifactId>groboutils-core</artifactId>
-			<version>5</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-core</artifactId>

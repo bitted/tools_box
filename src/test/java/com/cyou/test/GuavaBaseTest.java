@@ -64,7 +64,6 @@ public class GuavaBaseTest extends TestCase {
 		System.out.println(LOWER_HYPHEN.to(UPPER_CAMEL, "foo-bar"));
 		System.out.println(LOWER_HYPHEN.to(UPPER_UNDERSCORE, "foo-bar"));
 		System.out.println(LOWER_CAMEL.to(LOWER_HYPHEN, "HTTP"));
-		System.out.println(UPPER_UNDERSCORE.converterTo(UPPER_CAMEL).reverse().convert("FooBar"));
 	}
 
 	public void testCharMatcher() {

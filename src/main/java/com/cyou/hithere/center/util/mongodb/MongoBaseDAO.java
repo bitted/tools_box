@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import com.cyou.hithere.center.util.CustomProperty;
 
-
 /**
  * 
  * 类名称：MongoBaseDAO
@@ -22,24 +21,31 @@ import com.cyou.hithere.center.util.CustomProperty;
  * 
  * @version 1.0.0
  */
-@Component
+/**
+ * TODO: 使用到mongodb的时候打开注解，配置好mongo的地址即可
+ * 
+ * @author litaijun
+ *
+ * @param <T>
+ */
+// @Component
 public class MongoBaseDAO<T> {
 
 	private Datastore ds = null;
 	private String mongoName = String.valueOf(CustomProperty.getContextProperty("chat.mongoDBName"));
 
 	public MongoBaseDAO() {
-		//Long start = System.currentTimeMillis() / 1000;
+		// Long start = System.currentTimeMillis() / 1000;
 		ds = MongoDBConnection.getDataStore(mongoName);
 		ds.ensureIndexes();
 		ds.ensureCaps();
-		//Long end = System.currentTimeMillis() / 1000;		
+		// Long end = System.currentTimeMillis() / 1000;
 	}
 
 	public void batchAdd(List<T> t) {
 		ds.save(t);
 	}
-	
+
 	public void add(T t) {
 		ds.save(t);
 	}

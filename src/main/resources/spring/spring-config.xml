@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<util:properties id="zkConfigs"
+		location="classpath:config-toolkit.properties" />
+	<bean id="configProfile"
+		class="com.dangdang.config.service.zookeeper.ZookeeperConfigProfile">
+		<constructor-arg name="connectStr"
+			value="#{zkConfigs['zk.configs.address']}" />
+		<constructor-arg name="rootNode"
+			value="#{zkConfigs['zk.configs.rootNode']}" />
+		<constructor-arg name="version"
+			value="#{zkConfigs['zk.configs.version']}" />
+	</bean>
+	<bean id="publicConfig"
+		class="com.dangdang.config.service.zookeeper.ZookeeperConfigGroup">
+		<constructor-arg name="configProfile" ref="configProfile" />
+		<constructor-arg name="node" value="public" />
+	</bean>
+</beans>	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
