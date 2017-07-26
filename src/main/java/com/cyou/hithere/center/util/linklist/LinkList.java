@@ -15,7 +15,7 @@ import java.util.Stack;
 
 /**
  * 类名称：LinkList
- * 类描述：(描述此类所在架构中层次)
+ * 类描述：(链表翻转的方法)
  *
  * 创建人：litaijun
  * 创建时间：2016年12月20日 下午3:26:25
@@ -136,6 +136,7 @@ public class LinkList {
 	public static void main(String[] args) {
 		LinkList linkList = new LinkList();
 		Scanner input = new Scanner(System.in);
+		System.out.println("输入链表个数：");
 		int n = input.nextInt();
 		int[] x = new int[n];
 		for (int i = 0; i < n; i++) {

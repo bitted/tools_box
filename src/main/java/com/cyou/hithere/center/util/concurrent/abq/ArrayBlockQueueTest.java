@@ -30,7 +30,7 @@ public class ArrayBlockQueueTest {
 	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) throws InterruptedException {
 		// ArrayBlockingQueue 内部以 FIFO(先进先出)的顺序对元素进行存储。队列中的头元素在所有元素之中是放入时间最久的那个，而尾元素则是最短的那个。
-		BlockingQueue queue = new ArrayBlockingQueue<>(1024);
+		BlockingQueue queue = new ArrayBlockingQueue(1024);
 		Producer producer = new Producer(queue);
 		Consumer consumer = new Consumer(queue);
 
