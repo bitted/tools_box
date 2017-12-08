@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" version="4">
   <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration />
+    </facet>
     <facet type="web" name="Web">
       <configuration>
         <descriptors>
@@ -15,18 +18,8 @@
         </sourceRoots>
       </configuration>
     </facet>
-    <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/springmvc-servlet.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/spring/spring-config.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/spring/spring-conf.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/spring/spring-jms.xml</file>
-        </fileset>
-      </configuration>
-    </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6">
     <output url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -126,7 +119,7 @@
     <orderEntry type="library" name="Maven: org.xerial.snappy:snappy-java:1.1.1.7" level="project" />
     <orderEntry type="library" name="Maven: net.jpountz.lz4:lz4:1.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper:3.4.6" level="project" />
-    <orderEntry type="library" name="Maven: jline:jline:0.9.94" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty:3.7.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: jline:jline:2.11" level="project" />
   </component>
 </module>

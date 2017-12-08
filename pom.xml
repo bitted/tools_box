@@ -295,6 +295,16 @@
 		<outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
 		<!-- 设置war包名称 -->
 		<finalName>${artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
 		<!-- 定义resource插件打包所需要包含的目录 -->
 		<resources>
 			<resource>
